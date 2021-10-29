@@ -2,7 +2,7 @@
 
 - [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
 
-## コマンドメモ
+### コマンドメモ
 
 #### 以下のコマンドにより markdown ファイルを簡単に作成できます。
 
