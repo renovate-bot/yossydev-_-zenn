@@ -3,7 +3,7 @@ title: "Github用の拡張機能が最高に便利だった"
 emoji: "🎃"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [Github]
-published: false
+published: true
 ---
 
 # ことの発端
