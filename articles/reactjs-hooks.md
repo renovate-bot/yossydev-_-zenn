@@ -3,7 +3,7 @@ title: "[復習]React Hooks編"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [react, nextjs]
-published: false
+published: true
 ---
 
 内容で間違ってる点や、変な箇所がございましたら、お知らせください。
@@ -22,6 +22,7 @@ https://zenn.dev/yuto76/articles/nextjs-react
 - ただ復習するだけでは効率が悪いと感じ、ブログを書くことにした
 
 ## 本題
+[公式ドキュメント](https://ja.reactjs.org/docs/hooks-reference.html)
 
 ### ■ useCallback
 
@@ -118,3 +119,66 @@ export const Home = () => {
 
 // stateによって、コンポーネントが再レンダリングされるため、ページの値も変化する
 ```
+### ■ useEffect / useCallback の第二引数の空配列について
+
+#### useEffect
+
+- useEffect の第二引数の[]に変数を入れると、その変数が変更されたタイミングで、改めて useEffect の部分の処理が走る
+- 第二引数に何かしらの値を入れても、アンマウントの処理は実行される
+- アンマウント（Cleanup Function）→ マウントの順番で処理が走る
+- 配列なので、いくつでも変数を入れることができる
+
+```jsx
+export const Home = () => {
+  const [count, setCount] = useState(1);
+
+  const handleClick = () => {
+    setCount((count) => count + 1);
+  };
+
+  useEffect(() => {
+    alert('マウント！');
+    return () => {
+      alert('アンマウント！');
+    };
+  }, [count]);
+};
+
+// アンマウント→マウントの順番で処理が走る
+```
+
+#### useCallback
+
+- useCallback で、第二引数に何も入れなかったら、その中身がずっと同じ状態になる（useCallback は再生成されないため）
+
+```jsx
+export const Home = () => {
+  const [count, setCount] = useState(1);
+
+  const handleClick = () => {
+    setCount((count) => count + 1);
+  };
+
+  const handleClick = useCallback(() => {
+    if (count > 10) {
+      setCount((count) => count + 1);
+    }
+  }, [count]);
+};
+
+// この場合、10以上は画面に表示されない
+// 第二引数の[count] がない場合、10以降もそのまま画面に表示される
+```
+
+#### なぜ、第二引数に変数を指定して、更新・再生成させたりという処理が必要なのか？
+
+- パフォーマンスのため
+  (更新させたいものは変数を指定し、更新させなくてもいいものは空にする)
+
+## まとめ
+
+今回はReact HooksのuseState, useEffect, useCallbackの基礎の復習をしました。
+それぞれの使い方や、マウント/アンマウント、第二引数の意味など、すごい学びのある復習になりました。
+
+理解したつもりでいても、実際は理解できていないことだらけだと思うので、これからも引き続き勉強していって、ブログも更新していこうと思ってます.
+
