@@ -3,7 +3,7 @@ title: "ブランチを切って、プルリクエストを送ってみた"
 emoji: "🐙"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [git, Github]
-published: true
+published: false
 ---
 
 # 前提条件
