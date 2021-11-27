@@ -1,5 +1,5 @@
 ---
-title: "[復習]React Hooks編"
+title: "React Hooksについての勉強メモ"
 emoji: "🔖"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [react, nextjs]

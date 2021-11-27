@@ -1,5 +1,5 @@
 ---
-title: "[復習]React Props編"
+title: "ReactのPropsについての勉強メモ"
 emoji: "🌊"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [react,nextjs]
