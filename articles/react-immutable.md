@@ -3,7 +3,7 @@ title: "useState でミュータブルな操作をするとなぜ再レンダリ
 emoji: "⚽️"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [react, typescript, nextjs]
-published: false
+published: true
 ---
 
 ## useState でミュータブルな操作をするとなぜ再レンダリングされないのか？？
