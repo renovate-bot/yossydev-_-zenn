@@ -3,7 +3,7 @@ title: "[LT]英語理解できれば最強説"
 emoji: "🍣"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [メモ, ブログ]
-published: true
+published: false
 ---
 
 # [LT]英語理解できれば最強説
